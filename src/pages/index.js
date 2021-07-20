@@ -1,12 +1,12 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
+import Layout from '../components/layout'
+// import './style.sass'
 
 const IndexPage = () => {
   return (
-    <main>
-      <h1>My first Gatsby website</h1>
-      <Link to="/about">About</Link>
-    </main>
+    <Layout pageTitle="Domů">
+      <p>Home paaageee</p>
+    </Layout>
   )
 }
 
