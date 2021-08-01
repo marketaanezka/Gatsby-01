@@ -1,10 +1,10 @@
 import * as React from 'react'
 import Layout from '../components/layout'
-// import './style.sass'
+import "../styles/global.css"
 
 const IndexPage = () => {
   return (
-    <Layout pageTitle="Domů">
+    <Layout>
       <p>Home paaageee</p>
     </Layout>
   )
