@@ -1,5 +1,7 @@
 import * as React from 'react'
 import { graphql } from "gatsby"
+import { IoIosTimer } from "react-icons/io";
+import { ImSpoonKnife } from "react-icons/im";
 import { StaticImage } from 'gatsby-plugin-image'
 import Layout from '../components/layout'
 import {
@@ -12,18 +14,24 @@ import {
 
 export default function Template({data}) {
   const post = data.markdownRemark
-  console.log(post.frontmatter.image);
 
   return (
     <Layout>
       <article>
-       <StaticImage 
+        <h2>{post.frontmatter.title}</h2>
+        <small> By {post.frontmatter.author} on {post.frontmatter.date} </small>
+        <StaticImage 
         src="../images/honeycake.jpg"
         alt="cake with blueberries on top"
         className={recipeImage}
         />
-        <h2>{post.frontmatter.title}</h2>
-        <small>Posted by {post.frontmatter.author} on {post.frontmatter.date} </small>
+        <div>
+          <p>
+            <IoIosTimer />
+            Time: {post.frontmatter.time}</p>
+          <p>
+            <ImSpoonKnife />Serves: {post.frontmatter.serves}</p>
+        </div>
         <div className={recipeDetails}>
           <div className={ingredients}></div>
             <ul>
@@ -58,9 +66,10 @@ export const postQuery = graphql `
       frontmatter {
         path
         title
-        author
         date
-        image
+        author
+        time
+        serves
       }
     }
   }

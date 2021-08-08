@@ -1,9 +1,12 @@
 ---
 path: "/honeycake"
-date: "2020-01-01"
 title: "Honeycake with blueberries"
+date: "2020-01-01"
 author: "Henrietta"
-image: "../images/honeycake.jpg"
+time: "75"
+serves:
+  "12"
+  # image: "../images/honeycake.jpg" have to do a dynamic image in gatsby
 ---
 
 ###
