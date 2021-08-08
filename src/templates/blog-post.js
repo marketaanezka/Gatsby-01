@@ -1,20 +1,53 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
 import { graphql } from "gatsby"
+import { StaticImage } from 'gatsby-plugin-image'
+import Layout from '../components/layout'
+import {
+  recipeImage,
+  recipeDetails, 
+  ingredients,
+  method
+} from './blog-post.module.css'
 
 
 export default function Template({data}) {
   const post = data.markdownRemark
+  console.log(post.frontmatter.image);
 
   return (
-    <div>
-      <Link to="/blog">
-          Back to all posts
-      </Link> 
-      <h2>{post.frontmatter.title}</h2>
-      <h4>Posted by {post.frontmatter.author} on {post.frontmatter.date} </h4>
-      <div dangerouslySetInnerHTML={{__html:post.html}}></div>
-    </ div>
+    <Layout>
+      <article>
+       <StaticImage 
+        src="../images/honeycake.jpg"
+        alt="cake with blueberries on top"
+        className={recipeImage}
+        />
+        <h2>{post.frontmatter.title}</h2>
+        <small>Posted by {post.frontmatter.author} on {post.frontmatter.date} </small>
+        <div className={recipeDetails}>
+          <div className={ingredients}></div>
+            <ul>
+              <li>
+                <span>100g</span>
+                flour
+              </li>
+              <li>
+                <span>100g</span>
+                flour
+              </li>
+              <li>
+                <span>100g</span>
+                flour
+              </li>
+              <li>
+                <span>100g</span>
+                flour
+              </li>
+            </ul>
+        </div>
+        <div className={method} dangerouslySetInnerHTML={{__html:post.html}}></div>
+      </ article>
+    </Layout>
   )
 }
 
@@ -27,6 +60,7 @@ export const postQuery = graphql `
         title
         author
         date
+        image
       }
     }
   }

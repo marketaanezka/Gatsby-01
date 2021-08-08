@@ -1,0 +1,16 @@
+.recipe-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-image {
+  max-width: 200px;
+}
+
+.ingredients {
+  background-color: gray;
+}
+
+.method {
+  background-color: lightcyan;
+}
