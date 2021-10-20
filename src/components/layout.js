@@ -1,5 +1,5 @@
-import * as React from 'react'
-import { Link } from 'gatsby'
+import * as React from `react`
+import { Link } from `gatsby`
 import {
   container,
   fixedNavbar,
@@ -9,12 +9,12 @@ import {
   mainContent,
   footer,
   social
-} from './layout.module.css' 
-import Logo from '../assets/logo.svg'
-import Facebook from '../assets/facebook.svg'
-import Instagram from '../assets/instagram.svg'
-import Linkedin from '../assets/linkedin.svg'
-import Twitter from '../assets/twitter.svg'
+} from `./layout.module.css` 
+import Logo from `../assets/logo.svg`
+import Facebook from `../assets/facebook.svg`
+import Instagram from `../assets/instagram.svg`
+import Linkedin from `../assets/linkedin.svg`
+import Twitter from `../assets/twitter.svg`
 
 const Layout = ({ children }) => {
   return (
